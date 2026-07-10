@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AlumniRegistrationController;
+use App\Http\Controllers\DocumentApplicationController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Models\GalleryImage;
@@ -51,11 +53,13 @@ Route::get('/alumni', function () {
         'sections' => PageSection::forPage('alumni')->get()->keyBy('section_key'),
     ]);
 })->name('alumni');
+Route::post('/alumni', [AlumniRegistrationController::class, 'store'])->name('alumni.store');
 Route::get('/documents', function () {
     return view('pages.documents', [
         'sections' => PageSection::forPage('documents')->get()->keyBy('section_key'),
     ]);
 })->name('documents');
+Route::post('/documents', [DocumentApplicationController::class, 'store'])->name('documents.store');
 Route::get('/sponsorship', function () {
     return view('pages.sponsorship', [
         'sections' => PageSection::forPage('sponsorship')->get()->keyBy('section_key'),

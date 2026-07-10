@@ -57,17 +57,9 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-commenting-o" aria-hidden="true"></i> Enquiry</a>
-                <div class="collapsible-body left-sub-menu">
-                    <ul>
-                        <li><a href="#">All Enquiry</a></li>
-                        <li><a href="#">Course Enquiry</a></li>
-                        <li><a href="#">Admission Enquiry</a></li>
-                        <li><a href="#">Seminar Enquiry</a></li>
-                        <li><a href="#">Event Enquiry</a></li>
-                        <li><a href="#">Common Enquiry</a></li>
-                    </ul>
-                </div>
+            <li><a href="{{ route('admin.alumni-registrations.index') }}" class="{{ request()->routeIs('admin.alumni-registrations.*') ? 'menu-active' : '' }}"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Alumni Database</a>
+            </li>
+            <li><a href="{{ route('admin.document-applications.index') }}" class="{{ request()->routeIs('admin.document-applications.*') ? 'menu-active' : '' }}"><i class="fa fa-commenting-o" aria-hidden="true"></i> Document Applications</a>
             </li>
             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-cloud-download" aria-hidden="true"></i> Import & Export</a>
                 <div class="collapsible-body left-sub-menu">

@@ -2,6 +2,14 @@
    (primary #4c1864, secondary #3f189a, accent #f7b205). Loaded after
    style.css so these rules take precedence without editing the vendor file. */
 
+/* The vendor's .table-desi sets overflow-x:hidden, which silently
+   overrides Bootstrap's .table-responsive overflow-x:auto on every admin
+   table wrapper (they're always used together in these views) — wide
+   tables get clipped instead of horizontally scrolling. */
+.table-desi {
+    overflow-x: auto;
+}
+
 .sb1,
 .sb2,
 .sb2-13,
@@ -40,18 +48,106 @@
     color: #1c1c1c !important;
 }
 
-.dash-book a,
 .ad-st-view {
     background: #4c1864;
 }
 
-.dash-book a:hover,
-.dash-book a:focus,
 .ad-st-view:hover {
     background: #f7b205;
     color: #1c1c1c !important;
     border-color: #f7b205;
 }
+
+/* Modern flat dashboard stat cards, replacing the vendor theme's
+   stock-photo-background tiles. */
+.db-2 ul li {
+    padding: 10px;
+}
+
+.dash-b-1, .dash-b-2, .dash-b-3, .dash-b-4 {
+    background: #fff !important;
+}
+
+.dash-book {
+    background: #fff;
+    text-align: left;
+    padding: 28px 24px;
+    margin: 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(28, 12, 38, .08);
+    border-top: 4px solid var(--dash-accent, #4c1864);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.dash-book:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(28, 12, 38, .12);
+}
+
+.dash-book .dash-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(76, 24, 100, .08);
+    margin-bottom: 18px;
+}
+
+.dash-book .dash-icon i {
+    font-size: 20px;
+    color: var(--dash-accent, #4c1864);
+}
+
+.dash-book h5 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #8a8a8a;
+    padding-bottom: 4px;
+}
+
+.dash-book h4 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin: 0 0 14px;
+}
+
+.dash-book a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 0;
+    background: transparent;
+    color: var(--dash-accent, #4c1864);
+    padding: 0;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.dash-book a i {
+    font-size: 11px;
+    transition: transform .2s ease;
+}
+
+.dash-book a:hover,
+.dash-book a:focus {
+    background: transparent;
+    color: #f7b205;
+}
+
+.dash-book a:hover i {
+    transform: translateX(3px);
+}
+
+.dash-b-1 { --dash-accent: #4c1864; }
+.dash-b-2 { --dash-accent: #3f189a; }
+.dash-b-3 { --dash-accent: #d99a00; }
+.dash-b-4 { --dash-accent: #1a7a4c; }
 
 .btn-close-menu {
     background: #3f189a;
@@ -87,4 +183,137 @@
 .logo img {
     width: auto;
     max-height: 42px;
+}
+
+/* ==========================================================================
+   Responsive layout (tablet / mobile)
+   The vendor theme ships zero media queries for the sidebar/content split
+   (.sb2-1/.sb2-2 use fixed float percentages) and the hamburger/close
+   buttons in the topbar have no CSS or JS behind them at all. This section
+   turns the sidebar into an off-canvas panel below 991px, toggled via
+   theme-sync.js.
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .sb2-2 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 20px !important;
+    }
+
+    .sb2-1 {
+        position: fixed;
+        top: 0;
+        left: -270px;
+        width: 260px;
+        height: 100vh;
+        z-index: 10000;
+        overflow-y: auto;
+        padding-bottom: 40px;
+    }
+
+    body.admin-menu-open .sb2-1 {
+        left: 0;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, .25);
+    }
+
+    /* Backdrop shown behind the sidebar while it's open */
+    .admin-menu-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .45);
+        z-index: 9999;
+    }
+
+    body.admin-menu-open .admin-menu-backdrop {
+        display: block;
+    }
+
+    .atab-menu {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .12);
+        margin-right: 12px;
+    }
+
+    .atab-menu .tab-menu {
+        display: inline-block !important;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    /* The vendor's .btn-close-menu lives in the topbar's logo column, not
+       inside the sidebar panel itself, so it can't be positioned to look
+       attached to the off-canvas menu. The hamburger button already
+       toggles open/closed and the backdrop dismisses on tap, so this
+       stays hidden (matches its desktop default) rather than showing up
+       disconnected from the panel it's meant to close. */
+
+    .sb1-1 {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Dashboard stat cards: 2 per row on tablet */
+    .db-2 ul li {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Dashboard stat cards: 1 per row on phones */
+    .db-2 ul li {
+        width: 100%;
+    }
+
+    .dash-book h4 {
+        font-size: 28px;
+    }
+
+    /* Admin table cards already sit inside .table-responsive, but the
+       vendor theme's own header/actions rows don't wrap; stack them. */
+    .inn-title.d-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+
+    /* .page-back floats right inside the same <ul> as the left-floated
+       breadcrumb items with no wrap handling, so on narrow screens it
+       overlaps "Home / Page" instead of sitting below it. */
+    .sb2-2-2 .page-back {
+        float: none;
+        display: inline-block;
+        clear: both;
+        margin-top: 8px;
+    }
+
+    .box-inn-sp {
+        padding: 15px;
+    }
+
+    /* Keep the account name from wrapping to a second line and cramping
+       the topbar; truncate it instead. */
+    .top-user-pro {
+        max-width: 120px;
+        padding: 18px 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Desktop: make sure the mobile-only controls never show */
+    .btn-close-menu,
+    .admin-menu-backdrop {
+        display: none !important;
+    }
 }

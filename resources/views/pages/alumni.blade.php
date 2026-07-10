@@ -78,25 +78,34 @@
                     <h2 class="title-head">{{ $sections['register']->heading }} <span>{{ $sections['register']->heading_accent }}</span></h2>
                     <p>{{ $sections['register']->body }}</p>
                 </div>
-                <form class="contact-bx">
+
+                @if (session('status'))
+                    <div class="alert alert-success">{{ session('status') }}</div>
+                @endif
+
+                <form class="contact-bx" method="POST" action="{{ route('alumni.store') }}">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group"><input name="school_name" type="text" required class="form-control" placeholder="Full Name (During School Years)"></div>
+                            <div class="form-group"><input name="school_name" type="text" value="{{ old('school_name') }}" required class="form-control" placeholder="Full Name (During School Years)"></div>
+                            @error('school_name') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="current_name" type="text" class="form-control" placeholder="Current Name (if changed)"></div>
+                            <div class="form-group"><input name="current_name" type="text" value="{{ old('current_name') }}" class="form-control" placeholder="Current Name (if changed)"></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="class_set" type="text" required class="form-control" placeholder="Year of Graduation/Class Set"></div>
+                            <div class="form-group"><input name="class_set" type="text" value="{{ old('class_set') }}" required class="form-control" placeholder="Year of Graduation/Class Set"></div>
+                            @error('class_set') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="country" type="text" required class="form-control" placeholder="Country of Residence"></div>
+                            <div class="form-group"><input name="country" type="text" value="{{ old('country') }}" required class="form-control" placeholder="Country of Residence"></div>
+                            @error('country') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="contact" type="text" class="form-control" placeholder="Contact Information (Optional)"></div>
+                            <div class="form-group"><input name="contact" type="text" value="{{ old('contact') }}" class="form-control" placeholder="Contact Information (Optional)"></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="profession" type="text" class="form-control" placeholder="Profession/Industry (Optional)"></div>
+                            <div class="form-group"><input name="profession" type="text" value="{{ old('profession') }}" class="form-control" placeholder="Profession/Industry (Optional)"></div>
                         </div>
                         <div class="col-md-12">
                             <button name="submit" type="submit" value="Submit" class="btn radius-xl">Register Now</button>

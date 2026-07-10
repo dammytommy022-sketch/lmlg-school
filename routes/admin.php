@@ -19,5 +19,7 @@ Route::middleware(['auth'])->group(function () {
     require __DIR__.'/admin/gallery.php';
     require __DIR__.'/admin/slider.php';
     require __DIR__.'/admin/page-section.php';
+    require __DIR__.'/admin/document-application.php';
+    require __DIR__.'/admin/alumni-registration.php';
 
 });

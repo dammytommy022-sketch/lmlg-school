@@ -15,6 +15,7 @@
                 </form>
             </div>
             <!--== NOTIFICATION ==-->
+            {{--
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">
                     <a class='waves-effect btn-noti' href="admin-all-enquiry.html" title="all enquiry messages"><i class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>
@@ -22,6 +23,7 @@
                     <a class='waves-effect btn-noti' href="admin-admission-enquiry.html" title="admission enquiry"><i class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>
                 </div>
             </div>
+            --}}
             <!--== MY ACCCOUNT ==-->
             <div class="col-md-2 col-sm-3 col-xs-6">
                 <!-- Dropdown Trigger -->

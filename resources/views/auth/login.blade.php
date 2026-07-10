@@ -38,7 +38,7 @@
             align-items: center;
             justify-content: center;
             padding: 60px 40px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%), url('{{ asset('assets/images/background/bg1.jpg') }}');
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%), url('{{ asset('assets/images/background/bg2.jpg') }}');
             background-blend-mode: multiply;
             background-size: cover;
             background-position: center;

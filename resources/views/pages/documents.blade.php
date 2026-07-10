@@ -85,45 +85,57 @@
                     <h2 class="title-head">{{ $sections['application-form']->heading }} <span>{{ $sections['application-form']->heading_accent }}</span></h2>
                     <p>{{ $sections['application-form']->body }}</p>
                 </div>
-                <form class="contact-bx" enctype="multipart/form-data">
+
+                @if (session('status'))
+                    <div class="alert alert-success">{{ session('status') }}</div>
+                @endif
+
+                <form class="contact-bx" method="POST" action="{{ route('documents.store') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group"><input name="full_name" type="text" required class="form-control" placeholder="Full Name (while in school)"></div>
+                            <div class="form-group"><input name="full_name" type="text" value="{{ old('full_name') }}" required class="form-control" placeholder="Full Name (while in school)"></div>
+                            @error('full_name') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="graduation_year" type="text" required class="form-control" placeholder="Year of Graduation"></div>
+                            <div class="form-group"><input name="graduation_year" type="text" value="{{ old('graduation_year') }}" required class="form-control" placeholder="Year of Graduation"></div>
+                            @error('graduation_year') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="dob" type="date" required class="form-control" placeholder="Date of Birth"></div>
+                            <div class="form-group"><input name="dob" type="date" value="{{ old('dob') }}" required class="form-control" placeholder="Date of Birth"></div>
+                            @error('dob') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><input name="class_teacher" type="text" class="form-control" placeholder="Class Teacher (if known)"></div>
+                            <div class="form-group"><input name="class_teacher" type="text" value="{{ old('class_teacher') }}" class="form-control" placeholder="Class Teacher (if known)"></div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <select name="document_type" required class="form-control">
                                     <option value="">Select Document</option>
-                                    <option>Primary School Certificate</option>
-                                    <option>Testimonial</option>
-                                    <option>Confirmation Letter of Attendance</option>
+                                    <option {{ old('document_type') === 'Primary School Certificate' ? 'selected' : '' }}>Primary School Certificate</option>
+                                    <option {{ old('document_type') === 'Testimonial' ? 'selected' : '' }}>Testimonial</option>
+                                    <option {{ old('document_type') === 'Confirmation Letter of Attendance' ? 'selected' : '' }}>Confirmation Letter of Attendance</option>
                                 </select>
                             </div>
+                            @error('document_type') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <select name="delivery_option" required class="form-control">
                                     <option value="">Select Delivery Option</option>
-                                    <option>Digital Copy (Email)</option>
-                                    <option>Physical Pickup</option>
-                                    <option>Courier Delivery</option>
+                                    <option {{ old('delivery_option') === 'Digital Copy (Email)' ? 'selected' : '' }}>Digital Copy (Email)</option>
+                                    <option {{ old('delivery_option') === 'Physical Pickup' ? 'selected' : '' }}>Physical Pickup</option>
+                                    <option {{ old('delivery_option') === 'Courier Delivery' ? 'selected' : '' }}>Courier Delivery</option>
                                 </select>
                             </div>
+                            @error('delivery_option') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="d-block">Supporting Identification</label>
                                 <input name="identification" type="file" class="form-control">
                             </div>
+                            @error('identification') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="col-md-12">
                             <button name="submit" type="submit" value="Submit" class="btn radius-xl">Submit Application</button>

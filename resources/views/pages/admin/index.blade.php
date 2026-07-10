@@ -20,24 +20,35 @@
             <ul>
                 <li>
                     <div class="dash-book dash-b-1">
+                        <div class="dash-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
                         <h5>Total Users</h5>
                         <h4>{{ $totalUsers }}</h4>
-                        <a href="{{ route('admin.users.index') }}">View more</a>
+                        <a href="{{ route('admin.users.index') }}">View more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </li>
                 <li>
                     <div class="dash-book dash-b-2">
+                        <div class="dash-icon"><i class="fa fa-check-circle" aria-hidden="true"></i></div>
                         <h5>Active Users</h5>
                         <h4>{{ $activeUsers }}</h4>
-                        <a href="{{ route('admin.users.index') }}">View more</a>
+                        <a href="{{ route('admin.users.index') }}">View more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </li>
                 @foreach ($roleCounts as $role)
+                    @php
+                        $roleIcon = match (true) {
+                            str_contains($role->name, 'Admin') => 'fa-shield',
+                            $role->name === 'Staff' => 'fa-briefcase',
+                            $role->name === 'Alumni' => 'fa-graduation-cap',
+                            default => 'fa-user',
+                        };
+                    @endphp
                     <li>
                         <div class="dash-book dash-b-{{ (($loop->index + 2) % 4) + 1 }}">
+                            <div class="dash-icon"><i class="fa {{ $roleIcon }}" aria-hidden="true"></i></div>
                             <h5>{{ $role->name }}</h5>
                             <h4>{{ $role->users_count }}</h4>
-                            <a href="{{ route('admin.users.index') }}">View more</a>
+                            <a href="{{ route('admin.users.index') }}">View more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </li>
                 @endforeach
