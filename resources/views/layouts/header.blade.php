@@ -24,7 +24,7 @@
             <div class="container clearfix">
                 <!-- Header Logo ==== -->
                 <div class="menu-logo">
-                    <a href="{{ route('home') }}"><img src="assets/images/logo-white.png" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="/assets/images/logo-white.png" alt=""></a>
                 </div>
                 <!-- Mobile Nav Button ==== -->
                 <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
                 <!-- Navigation Menu ==== -->
                 <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
                     <div class="menu-logo">
-                        <a href="{{ route('home') }}"><img src="assets/images/logo.png" alt=""></a>
+                        <a href="{{ route('home') }}"><img src="/assets/images/logo.png" alt=""></a>
                     </div>
                     <ul class="nav navbar-nav">	
                         <li class="active"><a href="{{ route('home') }}">Home</a></li>
@@ -53,12 +53,18 @@
                             <ul class="sub-menu">
                                 <li><a href="{{ route('academics') }}">Academics</a></li>
                                 <li><a href="{{ route('admissions') }}">Admissions</a></li>
-                                <li><a href="{{ route('news') }}">News</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
                         <li><a href="{{ route('gallery') }}">Gallery</a></li>
-                        <li><a href="{{ route('donate') }}">Donation</a></li>
+                        <li><a href="javascript:;">Alumni <i class="fa fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('alumni') }}">Alumni Database</a></li>
+                                <li><a href="{{ route('documents') }}">Document Application</a></li>
+                                <li><a href="{{ route('sponsorship') }}">Sponsorship</a></li>
+                                <li><a href="{{ route('news') }}">News & Updates</a></li>
+                            </ul>
+                        </li>
                         
                         
                     </ul>

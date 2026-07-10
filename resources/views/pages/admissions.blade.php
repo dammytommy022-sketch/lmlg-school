@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner ovbl-dark" style="background-image:url('assets/images/banner/banner2.jpg');">
+<section class="page-banner ovbl-dark" style="background-image:url('/assets/images/banner/banner2.jpg');">
     <div class="container">
         <div class="page-banner-entry text-center text-white pt-5">
-            <h1>Admissions</h1>
-            <p>Begin your child's journey in a caring, disciplined, and inspiring learning community.</p>
+            <h1>{{ $sections['banner']->heading }}</h1>
+            <p>{{ $sections['banner']->body }}</p>
         </div>
     </div>
 </section>
@@ -14,20 +14,15 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 heading-bx left">
-                <h2 class="title-head">Join Our <span>School Community</span></h2>
-                <h5>A simple, transparent admission process for parents and guardians.</h5>
-                <p>
-                    We welcome families who desire quality primary education, strong values,
-                    dedicated teachers, and a safe learning environment where children can thrive.
-                </p>
-                <p>
-                    Our admissions team is available to guide parents through enquiries,
-                    school visits, documentation, assessment, and placement.
-                </p>
-                <a href="{{ route('contact') }}" class="btn radius-xl">Make an Enquiry</a>
+                <h2 class="title-head">{{ $sections['intro']->heading }} <span>{{ $sections['intro']->heading_accent }}</span></h2>
+                <h5>{{ $sections['intro']->subheading }}</h5>
+                @foreach ($sections['intro']->body_paragraphs as $paragraph)
+                    <p>{{ $paragraph }}</p>
+                @endforeach
+                <a href="{{ $sections['intro']->cta_link }}" class="btn radius-xl">{{ $sections['intro']->cta_label }}</a>
             </div>
             <div class="col-lg-6 col-md-12">
-                <img src="assets/images/our-services/pic2.jpg" class="img-fluid rounded" alt="Admission support">
+                <img src="/assets/images/our-services/pic2.jpg" class="img-fluid rounded" alt="Admission support">
             </div>
         </div>
     </div>
@@ -36,8 +31,8 @@
 <section class="section-area section-sp2 bg-light">
     <div class="container">
         <div class="heading-bx text-center">
-            <h2 class="title-head">Admission <span>Steps</span></h2>
-            <p>Clear guidance from first enquiry to classroom welcome.</p>
+            <h2 class="title-head">{{ $sections['admission-steps']->heading }} <span>{{ $sections['admission-steps']->heading_accent }}</span></h2>
+            <p>{{ $sections['admission-steps']->body }}</p>
         </div>
         <div class="row g-4">
 
@@ -101,7 +96,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 heading-bx left">
-                <h2 class="title-head">Required <span>Documents</span></h2>
+                <h2 class="title-head">{{ $sections['required-documents']->heading }} <span>{{ $sections['required-documents']->heading_accent }}</span></h2>
                 <ul class="list-check">
                     <li>Completed admission form</li>
                     <li>Birth certificate or age declaration</li>
@@ -111,11 +106,8 @@
                 </ul>
             </div>
             <div class="col-md-6 heading-bx left">
-                <h2 class="title-head">Who Can <span>Apply?</span></h2>
-                <p>
-                    Applications are welcome for early years and primary classes, subject to
-                    available spaces and appropriate placement.
-                </p>
+                <h2 class="title-head">{{ $sections['who-can-apply']->heading }} <span>{{ $sections['who-can-apply']->heading_accent }}</span></h2>
+                <p>{{ $sections['who-can-apply']->body }}</p>
                 <ul class="list-check">
                     <li>Children ready for nursery or primary learning</li>
                     <li>Transfer pupils from recognized schools</li>
@@ -126,18 +118,15 @@
     </div>
 </section>
 
-<section class="section-area section-sp1 ovpr-dark bg-fix" style="background-image:url(assets/images/background/bg1.jpg);">
+<section class="section-area section-sp1 ovpr-dark bg-fix" style="background-image:url(/assets/images/background/bg1.jpg);">
     <div class="container">
         <div class="row text-white">
             <div class="col-md-8 heading-bx left">
-                <h2 class="title-head">Ready to <span>Apply?</span></h2>
-                <p>
-                    Speak with our admissions office to confirm available spaces,
-                    visit dates, and the next steps for your child.
-                </p>
+                <h2 class="title-head">{{ $sections['cta']->heading }} <span>{{ $sections['cta']->heading_accent }}</span></h2>
+                <p>{{ $sections['cta']->body }}</p>
             </div>
             <div class="col-md-4 text-md-right text-center align-self-center">
-                <a href="{{ route('contact') }}" class="btn radius-xl">Contact Admissions</a>
+                <a href="{{ $sections['cta']->cta_link }}" class="btn radius-xl">{{ $sections['cta']->cta_label }}</a>
             </div>
         </div>
     </div>

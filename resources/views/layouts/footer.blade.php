@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
                         <div class="pt-logo mr-auto">
-                            <a href="{{ route('home') }}"><img src="assets/images/logo-white.png" alt=""/></a>
+                            <a href="{{ route('home') }}"><img src="/assets/images/logo-white.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="col-12 col-lg-5 col-md-7 col-sm-12">
@@ -29,9 +29,12 @@
                                     <h5 class="footer-title">Explore</h5>
                                     <ul>
                                         <li><a href="{{ route('admissions') }}">Admissions</a></li>
-                                        <li><a href="{{ route('news') }}">News</a></li>
                                         <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                                        <li><a href="{{ route('alumni') }}">Alumni</a></li>
+                                        <li><a href="{{ route('documents') }}">Document Application</a></li>
                                         <li><a href="{{ route('donate') }}">Donate</a></li>
+                                        <li><a href="{{ route('sponsorship') }}">Sponsorship</a></li>
+                                        <li><a href="{{ route('news') }}">News & Updates</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -52,14 +55,14 @@
                         <div class="widget widget_gallery gallery-grid-4">
                             <h5 class="footer-title">Our Gallery</h5>
                             <ul class="magnific-image">
-                                <li><a href="assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic1.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic2.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic3.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic4.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic4.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic5.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic5.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic6.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic6.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic7.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic7.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic8.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic8.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic1.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic2.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic3.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic4.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic4.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic5.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic5.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic6.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic6.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic7.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic7.jpg" alt=""></a></li>
+                                <li><a href="/assets/images/gallery/pic8.jpg" class="magnific-anchor"><img src="/assets/images/gallery/pic8.jpg" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -67,7 +70,18 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <p class="mb-1">Lagos Mainland Local Government Primary School One, Fadeyi-Yaba, Lagos</p>
+                    <p class="mb-0">Building Foundations. Preserving Memories. Inspiring Generations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </footer>
 <!-- Footer END ==== -->
 <button class="back-to-top fa fa-chevron-up" ></button>

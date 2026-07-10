@@ -82,47 +82,48 @@
 				<!-- START REVOLUTION SLIDER 5.3.0.2 fullwidth mode -->
 				<div id="rev_slider_486_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
 					<ul>	<!-- SLIDE  -->
-						<li data-index="rs-100" 
-						data-transition="parallaxvertical" 
-						data-slotamount="default" 
-						data-hideafterloop="0" 
-						data-hideslideonmobile="off" 
-						data-easein="default" 
-						data-easeout="default" 
-						data-masterspeed="default" 
-						data-thumb="error-404.html" 
-						data-rotate="0" 
-						data-fstransition="fade" 
-						data-fsmasterspeed="1500" 
-						data-fsslotamount="7" 
-						data-saveperformance="off" 
-						data-title="A STUDY ON HAPPINESS" 
-						data-param1="" data-param2="" 
-						data-param3="" data-param4="" 
-						data-param5="" data-param6="" 
-						data-param7="" data-param8="" 
-						data-param9="" data-param10="" 
-						data-description="Science says that Women are generally happier">
+						@foreach ($sliders as $slide)
+						<li data-index="rs-{{ $slide->id }}"
+						data-transition="parallaxvertical"
+						data-slotamount="default"
+						data-hideafterloop="0"
+						data-hideslideonmobile="off"
+						data-easein="default"
+						data-easeout="default"
+						data-masterspeed="default"
+						data-thumb="{{ $slide->image_url }}"
+						data-rotate="0"
+						data-fstransition="fade"
+						data-fsmasterspeed="1500"
+						data-fsslotamount="7"
+						data-saveperformance="off"
+						data-title="{{ $slide->title }}"
+						data-param1="" data-param2=""
+						data-param3="" data-param4=""
+						data-param5="" data-param6=""
+						data-param7="" data-param8=""
+						data-param9="" data-param10=""
+						data-description="LMLG">
 							<!-- MAIN IMAGE -->
-							<img src="assets/images/slider/slide1.jpg" alt="" 
-								data-bgposition="center center" 
-								data-bgfit="cover" 
-								data-bgrepeat="no-repeat" 
-								data-bgparallax="10" 
-								class="rev-slidebg" 
+							<img src="{{ $slide->image_url }}" alt="{{ $slide->title }}"
+								data-bgposition="center center"
+								data-bgfit="cover"
+								data-bgrepeat="no-repeat"
+								data-bgparallax="10"
+								class="rev-slidebg"
 								data-no-retina />
-								
+
 							<!-- LAYER NR. 1 -->
-							<div class="tp-caption tp-shape tp-shapewrapper " 
-								id="slide-100-layer-1" 
-								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+							<div class="tp-caption tp-shape tp-shapewrapper "
+								id="slide-{{ $slide->id }}-layer-1"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
 								data-width="full"
 								data-height="full"
 								data-whitespace="nowrap"
-								data-type="shape" 
-								data-basealign="slide" 
-								data-responsive_offset="off" 
+								data-type="shape"
+								data-basealign="slide"
+								data-responsive_offset="off"
 								data-responsive="off"
 								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1,"to":"opacity:0;","ease":"Power4.easeOut"}]'
 								data-textAlign="['left','left','left','left']"
@@ -130,21 +131,21 @@
 								data-paddingright="[0,0,0,0]"
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
-								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>	
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
 							<!-- LAYER NR. 2 -->
-							<div class="tp-caption Newspaper-Title   tp-resizeme" 
-								id="slide-100-layer-2" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['0','0','0','0']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['250','250','250','240']" 
+							<div class="tp-caption Newspaper-Title   tp-resizeme"
+								id="slide-{{ $slide->id }}-layer-2"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['250','250','250','240']"
 								data-fontsize="['50','50','50','30']"
 								data-lineheight="['55','55','55','35']"
 								data-width="full"
 								data-height="none"
 								data-whitespace="normal"
-								data-type="text" 
-								data-responsive_offset="on" 
+								data-type="text"
+								data-responsive_offset="on"
 								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
 								data-textAlign="['center','center','center','center']"
 								data-paddingtop="[0,0,0,0]"
@@ -152,20 +153,20 @@
 								data-paddingbottom="[10,10,10,10]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
-									Welcome to LMLG Primary School
+									{{ $slide->title }}
 							</div>
 
 							<!-- LAYER NR. 3 -->
-							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
-								id="slide-100-layer-3" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['0','0','0','0']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['210','210','210','210']" 
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-{{ $slide->id }}-layer-3"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['210','210','210','210']"
 								data-width="none"
 								data-height="none"
 								data-whitespace="nowrap"
-								data-type="text" 
+								data-type="text"
 								data-responsive_offset="on"
 								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
 								data-textAlign="['left','left','left','left']"
@@ -174,201 +175,43 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Inspiring Excellence, Building Character
+									{{ $slide->subtitle }}
 							</div>
-							
-							<!-- LAYER NR. 3 -->
-							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
-								id="slide-100-layer-4" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['0','0','0','0']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['320','320','320','290']" 
-								data-width="['800','800','700','420']"
-								data-height="['100','100','100','120']"
-								data-whitespace="unset"
-								data-type="text" 
-								data-responsive_offset="on"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									 Providing quality education in a caring and stimulating environment where children learn, grow, and discover their full potential.
 
-							</div>
 							<!-- LAYER NR. 4 -->
-							<div class="tp-caption Newspaper-Button rev-btn " 
-								id="slide-100-layer-5" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['90','80','75','90']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['400','400','400','420']" 
+							@if ($slide->button1_label)
+							<div class="tp-caption Newspaper-Button rev-btn "
+								id="slide-{{ $slide->id }}-layer-5"
+								data-x="['center','center','center','center']"
+								data-hoffset="['90','80','75','90']"
+								data-y="['top','top','top','top']"
+								data-voffset="['400','400','400','420']"
 								data-width="none"
 								data-height="none"
 								data-whitespace="nowrap"
-								data-type="button" 
-								data-responsive_offset="on" 
-								data-responsive="off"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[12,12,12,12]"
-								data-paddingright="[30,35,35,15]"
-								data-paddingbottom="[12,12,12,12]"
-								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;">READ MORE </div>
-							<div class="tp-caption Newspaper-Button rev-btn" 
-								id="slide-100-layer-6" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['-90','-80','-75','-90']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['400','400','400','420']" 
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="button" 
-								data-responsive_offset="on" 
-								data-responsive="off"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[12,12,12,12]"
-								data-paddingright="[30,35,35,15]"
-								data-paddingbottom="[12,12,12,12]"
-								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">Adminssion</div>
-						</li>
-						<li data-index="rs-200" 
-						data-transition="parallaxvertical" 
-						data-slotamount="default" 
-						data-hideafterloop="0" 
-						data-hideslideonmobile="off" 
-						data-easein="default" 
-						data-easeout="default" 
-						data-masterspeed="default" 
-						data-thumb="assets/images/slider/slide1.jpg" 
-						data-rotate="0" 
-						data-fstransition="fade" 
-						data-fsmasterspeed="1500" 
-						data-fsslotamount="7" 
-						data-saveperformance="off" 
-						data-title="A STUDY ON HAPPINESS" 
-						data-param1="" data-param2="" 
-						data-param3="" data-param4="" 
-						data-param5="" data-param6="" 
-						data-param7="" data-param8="" 
-						data-param9="" data-param10="" 
-						data-description="Science says that Women are generally happier">
-							<!-- MAIN IMAGE -->
-							<img src="assets/images/slider/slide2.jpg" alt="" 
-								data-bgposition="center center" 
-								data-bgfit="cover" 
-								data-bgrepeat="no-repeat" 
-								data-bgparallax="10" 
-								class="rev-slidebg" 
-								data-no-retina />
-								
-							<!-- LAYER NR. 1 -->
-							<div class="tp-caption tp-shape tp-shapewrapper " 
-								id="slide-200-layer-1" 
-								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-								data-width="full"
-								data-height="full"
-								data-whitespace="nowrap"
-								data-type="shape" 
-								data-basealign="slide" 
-								data-responsive_offset="off" 
-								data-responsive="off"
-								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:1;","ease":"Power4.easeOut"}]'
-								data-textAlign="['left','left','left','left']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
-							</div>
-
-							<!-- LAYER NR. 2 -->
-							<div class="tp-caption Newspaper-Title   tp-resizeme" 
-								id="slide-200-layer-2" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['0','0','0','0']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['250','250','250','240']" 
-								data-fontsize="['50','50','50','30']"
-								data-lineheight="['55','55','55','35']"
-								data-width="full"
-								data-height="none"
-								data-whitespace="normal"
-								data-type="text" 
-								data-responsive_offset="on" 
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[10,10,10,10]"
-								data-paddingleft="[0,0,0,0]"
-								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
-									Welcome to LMLG Primary School
-							</div>
-
-							<!-- LAYER NR. 3 -->
-							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
-								id="slide-200-layer-3" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['0','0','0','0']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['210','210','210','210']" 
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="text" 
+								data-type="button"
 								data-responsive_offset="on"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['left','left','left','left']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Building Strong Foundations
-							</div>
-							
-							<!-- LAYER NR. 3 -->
-							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
-								id="slide-200-layer-4" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['0','0','0','0']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['320','320','320','290']" 
-								data-width="['800','800','700','420']"
-								data-height="['100','100','100','120']"
-								data-whitespace="unset"
-								data-type="text" 
+								data-responsive="off"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[12,12,12,12]"
+								data-paddingright="[30,35,35,15]"
+								data-paddingbottom="[12,12,12,12]"
+								data-paddingleft="[30,35,35,15]"
+								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;"><a href="{{ $slide->button1_link ?: '#' }}" style="color:inherit;text-decoration:none;display:block;">{{ $slide->button1_label }}</a></div>
+							@endif
+							@if ($slide->button2_label)
+							<div class="tp-caption Newspaper-Button rev-btn"
+								id="slide-{{ $slide->id }}-layer-6"
+								data-x="['center','center','center','center']"
+								data-hoffset="['-90','-80','-75','-90']"
+								data-y="['top','top','top','top']"
+								data-voffset="['400','400','400','420']"
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="button"
 								data-responsive_offset="on"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									Our dedicated teachers and modern learning approach help pupils develop confidence, creativity, leadership skills, and academic excellence.
-							</div>
-							<!-- LAYER NR. 4 -->
-							<div class="tp-caption Newspaper-Button rev-btn " 
-								id="slide-200-layer-5" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['90','80','75','90']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['400','400','400','420']" 
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="button" 
-								data-responsive_offset="on" 
 								data-responsive="off"
 								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
 								data-textAlign="['center','center','center','center']"
@@ -376,32 +219,15 @@
 								data-paddingright="[30,35,35,15]"
 								data-paddingbottom="[12,12,12,12]"
 								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;">READ MORE </div>
-							<div class="tp-caption Newspaper-Button rev-btn" 
-								id="slide-200-layer-6" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['-90','-80','-75','-90']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['400','400','400','420']" 
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="button" 
-								data-responsive_offset="on" 
-								data-responsive="off"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[12,12,12,12]"
-								data-paddingright="[30,35,35,15]"
-								data-paddingbottom="[12,12,12,12]"
-								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">Academics</div>
+								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;"><a href="{{ $slide->button2_link ?: '#' }}" style="color:inherit;text-decoration:none;display:block;">{{ $slide->button2_label }}</a></div>
+							@endif
 						</li>
+						@endforeach
 						<!-- SLIDE  -->
 					</ul>
-				</div><!-- END REVOLUTION SLIDER -->  
-			</div>  
-		</div>  
+				</div><!-- END REVOLUTION SLIDER -->
+			</div>
+		</div>
         <!-- Main Slider -->
 		<div class="content-block">
             
@@ -412,7 +238,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="service-bx">
 								<div class="action-box">
-									<img src="assets/images/our-services/pic1.jpg" alt="">
+									<img src="/assets/images/our-services/pic1.jpg" alt="">
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
@@ -427,7 +253,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="service-bx">
 								<div class="action-box">
-									<img src="assets/images/our-services/pic2.jpg" alt="">
+									<img src="/assets/images/our-services/pic2.jpg" alt="">
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
@@ -442,7 +268,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-12">
 							<div class="service-bx m-b0">
 								<div class="action-box">
-									<img src="assets/images/our-services/pic3.jpg" alt="">
+									<img src="/assets/images/our-services/pic3.jpg" alt="">
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
@@ -466,26 +292,20 @@
 						
                         <div class="col-md-6 heading-bx left">
 							<h2 class="title-head">About <span> Our School</span></h2>
-                            <h5>A Place Where Every Child Learns, Grows, and Thrives</h5>
+                            <h5>Welcome to LMLG Primary School One, Fadeyi- Yaba, Lagos. </h5>
 							<p>
-                                At [School Name], we are committed to providing a nurturing and inspiring
-                                learning environment where every child is encouraged to discover their
-                                talents, develop strong values, and achieve academic excellence. Our
-                                dedicated teachers work closely with pupils to build confidence,
-                                creativity, leadership, and a lifelong love for learning.
+                                Lagos Mainland Local Government Primary School One, Fadeyi-Yaba, Lagos (formerly Lagos City Council Primary School (LCC),  stands as a proud symbol of academic foundation, discipline, and community heritage. For decades, our school has nurtured young minds, built character, and produced outstanding individuals contributing positively to society across the world.
+							</p>
+							<p>
+								Today, we celebrate our past, strengthen our present, and build a sustainable future through innovation, alumni collaboration, and educational development.
                             </p>
-                            <ul class="list-check">
-                                <li>Dedicated Educators Committed to Every Child's Success</li>
-                                <li>Safe, Secure, and Child-Friendly Learning Environment</li>
-                                <li>Strong Academic Foundation for Lifelong Learning</li>
-                                <li>Character Building and Future Leadership Development</li>
-                            </ul>
+                            
                             <a href="{{ route('about') }}" class="btn radius-xl">
                                 Read More
                             </a>
 						</div>
                         <div class="col-md-6 pt-3">
-							<img src="assets/images/our-services/pics4.jpg" alt="">
+							<img src="/assets/images/our-services/pics4.jpg" alt="">
 						</div>
 
 					</div>
@@ -493,7 +313,7 @@
 				</div>
 			</div>
 			<!-- Popular Courses END -->
-
+			{{--
             <div class="section-area ">
                 <div class="container">
                     <div class="row">
@@ -550,8 +370,69 @@
 
                 </div>
 
-            </div>
+            </div>--}}
+			<section class="section-area section-sp2 bg-light">
+				<div class="container">
+					<div class="heading-bx text-center">
+						<h2 class="title-head">Our Legacy <span>, Vision & Mission</span></h2>
+						<p>Clear principles guide how we teach, lead, serve, and care for every child.</p>
+					</div>
+					
+					<div class="row g-4">
 
+						<div class="col-lg-4">
+							<div class="school-card">
+								<div class="mb-3">
+									<i class="fa fa-star fa-2x text-primary"></i>
+								</div>
+
+								<h4>Our Legacy</h4>
+
+								<p class="mb-0">
+									
+
+									Since its establishment in 1961, LMLG Primary School has served as a cradle of learning where generations began their educational journeys. Thousands of pupils have passed through our classrooms, carrying forward values of excellence, integrity, and service.
+								</p>
+							</div>
+						</div>
+
+						<div class="col-lg-4">
+							<div class="school-card">
+								<div class="mb-3">
+									<i class="fa fa-eye fa-2x text-primary"></i>
+								</div>
+
+								<h4>Our Vision</h4>
+
+								<p class="mb-0">
+									To preserve our heritage while creating modern opportunities that support learning, alumni connection, and institutional growth.
+								</p>
+							</div>
+						</div>
+
+						<div class="col-lg-4">
+							<div class="school-card">
+								<div class="mb-3">
+									<i class="fa fa-bullseye fa-2x text-primary"></i>
+								</div>
+
+								<h4>Our Mission</h4>
+
+								<ul class="list-check mb-0">
+									<li>Promote educational excellence</li>
+									<li>Preserve historical records and alumni connections</li>
+									<li>Provide accessible academic documentation</li>
+									<li>Encourage community participation and sponsorship</li>
+									<li>Support continuous development of school facilities</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+			</section>
+			{{--
             <div class="section-area bg-gray section-sp1 our-story">
 				<div class="container">
 					<div class="row align-items-center d-flex">
@@ -568,16 +449,15 @@
 						</div>
 						<div class="col-lg-6 col-md-12 heading-bx p-lr">
 							<div class="video-bx">
-								<img src="assets/images/about/pic1.jpg" alt=""/>
+								<img src="/assets/images/about/pic1.jpg" alt=""/>
 								<a href="https://www.youtube.com/watch?v=skQrVF1gQg4" class="popup-youtube video"><i class="fa fa-play"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
             <div class="section-area section-sp1 ovpr-dark bg-fix donation-section"
-                style="background-image:url(assets/images/background/bg1.jpg);">
+                style="background-image:url(/assets/images/background/bg1.jpg);">
 
                 <div class="container">
 
@@ -648,9 +528,7 @@
 
                 </div>
 
-            </div>
-            
-		
+            </div>		
 			<div class="section-area section-sp2">
 				<div class="container">
 					<div class="row">
@@ -664,7 +542,7 @@
 						<div class="item">
 							<div class="event-bx">
 								<div class="action-box">
-									<img src="assets/images/event/pic4.jpg" alt="">
+									<img src="/assets/images/event/pic4.jpg" alt="">
 								</div>
 								<div class="info-bx d-flex">
 									<div>
@@ -687,7 +565,7 @@
 						<div class="item">
 							<div class="event-bx">
 								<div class="action-box">
-									<img src="assets/images/event/pic3.jpg" alt="">
+									<img src="/assets/images/event/pic3.jpg" alt="">
 								</div>
 								<div class="info-bx d-flex">
 									<div>
@@ -710,7 +588,7 @@
 						<div class="item">
 							<div class="event-bx">
 								<div class="action-box">
-									<img src="assets/images/event/pic2.jpg" alt="">
+									<img src="/assets/images/event/pic2.jpg" alt="">
 								</div>
 								<div class="info-bx d-flex">
 									<div>
@@ -737,10 +615,8 @@
 					</div>
 				</div>
 			</div>
-			
 			<!-- Alumni & Community Voices -->
-
-            <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(assets/images/background/bg1.jpg);">
+            <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(/assets/images/background/bg1.jpg);">
 
                 <div class="container">
 
@@ -768,7 +644,7 @@
                             <div class="testimonial-bx">
 
                                 <div class="testimonial-thumb">
-                                    <img src="assets/images/testimonials/alumni1.jpg" alt="Parent Testimonial">
+                                    <img src="/assets/images/testimonials/alumni1.jpg" alt="Parent Testimonial">
                                 </div>
 
                                 <div class="testimonial-info">
@@ -793,7 +669,7 @@
                             <div class="testimonial-bx">
 
                                 <div class="testimonial-thumb">
-                                    <img src="assets/images/testimonials/alumni2.jpg" alt="Alumni Testimonial">
+                                    <img src="/assets/images/testimonials/alumni2.jpg" alt="Alumni Testimonial">
                                 </div>
 
                                 <div class="testimonial-info">
@@ -818,7 +694,7 @@
                             <div class="testimonial-bx">
 
                                 <div class="testimonial-thumb">
-                                    <img src="assets/images/testimonials/alumni3.jpg" alt="Community Representative">
+                                    <img src="/assets/images/testimonials/alumni3.jpg" alt="Community Representative">
                                 </div>
 
                                 <div class="testimonial-info">
@@ -843,7 +719,7 @@
                             <div class="testimonial-bx">
 
                                 <div class="testimonial-thumb">
-                                    <img src="assets/images/testimonials/alumni4.jpg" alt="Head Teacher">
+                                    <img src="/assets/images/testimonials/alumni4.jpg" alt="Head Teacher">
                                 </div>
 
                                 <div class="testimonial-info">
@@ -869,163 +745,6 @@
 
             </div>
             <!-- Alumni & Community Voices END -->
-
-
-            <!-- Gallery Section -->
-            <div class="section-area section-sp2 bg-light">
-
-                <div class="container">
-
-                    <!-- Section Title -->
-                    <div class="section-head text-center">
-                        <h2 class="title-head">School <span>Gallery</span></h2>
-                        <h5>Celebrating Excellence, Achievement, and Community Impact</h5>
-                        <p>
-                            Explore memorable moments that showcase our commitment to quality education,
-                            student development, institutional growth, and community engagement.
-                        </p>
-                    </div>
-
-                    <!-- Statistics -->
-                    <div class="row text-center m-b50">
-
-                        <div class="col-md-3 col-6">
-                            <div class="gallery-stat">
-                                <h3>50+</h3>
-                                <span>Years of Excellence</span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-6">
-                            <div class="gallery-stat">
-                                <h3>5,000+</h3>
-                                <span>Alumni Worldwide</span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-6">
-                            <div class="gallery-stat">
-                                <h3>35+</h3>
-                                <span>Projects Delivered</span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-6">
-                            <div class="gallery-stat">
-                                <h3>1,200+</h3>
-                                <span>Students Supported</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Featured Images -->
-                    <div class="row">
-
-                        <div class="col-lg-6 mb-4">
-                            <div class="gallery-item gallery-large">
-                                <img src="assets/images/gallery/pic3.jpg" alt="Graduation Ceremony">
-                                <div class="gallery-overlay">
-                                    <h4>Graduation Ceremony</h4>
-                                    <p>Celebrating academic achievement and student success.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="row">
-
-                                <div class="col-md-6 mb-4">
-                                    <div class="gallery-item">
-                                        <img src="assets/images/gallery/pic1.jpg" alt="Science Laboratory">
-                                        <div class="gallery-overlay">
-                                            <h5>Science Laboratory</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-4">
-                                    <div class="gallery-item">
-                                        <img src="assets/images/gallery/pic2.jpg" alt="Library">
-                                        <div class="gallery-overlay">
-                                            <h5>School Library</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-4">
-                                    <div class="gallery-item">
-                                        <img src="assets/images/gallery/pic4.jpg" alt="Alumni Project">
-                                        <div class="gallery-overlay">
-                                            <h5>Alumni Impact Project</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-4">
-                                    <div class="gallery-item">
-                                        <img src="assets/images/gallery/pic5.jpg" alt="Cultural Day">
-                                        <div class="gallery-overlay">
-                                            <h5>Cultural Day</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Additional Gallery Grid -->
-                    <div class="row mt-3">
-
-                        <div class="col-md-4 mb-4">
-                            <div class="gallery-item">
-                                <img src="assets/images/gallery/pic6.jpg" alt="">
-                                <div class="gallery-overlay">
-                                    <h5>Academic Activities</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-4">
-                            <div class="gallery-item">
-                                <img src="assets/images/gallery/pic7.jpg" alt="">
-                                <div class="gallery-overlay">
-                                    <h5>Sports & Recreation</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-4">
-                            <div class="gallery-item">
-                                <img src="assets/images/gallery/pic8.jpg" alt="">
-                                <div class="gallery-overlay">
-                                    <h5>School Assembly</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- CTA -->
-                    <div class="text-center mt-4">
-                        <h4>Explore More Moments from Our School Community</h4>
-
-                        <p class="m-b30">
-                            Discover the achievements, events, and milestones that continue
-                            to shape the future of our students and institution.
-                        </p>
-
-                        <a href="#" class="btn radius-xl">
-                            View Full Gallery
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-			
 			<!-- Recent News -->
 			<div class="section-area section-sp2">
                 <div class="container">
@@ -1039,7 +758,7 @@
 						<div class="item">
 							<div class="recent-news">
 								<div class="action-box">
-									<img src="assets/images/blog/latest-blog/pic1.jpg" alt="">
+									<img src="/assets/images/blog/latest-blog/pic1.jpg" alt="">
 								</div>
 								<div class="info-bx">
 									<ul class="media-post">
@@ -1058,7 +777,7 @@
 						<div class="item">
 							<div class="recent-news">
 								<div class="action-box">
-									<img src="assets/images/blog/latest-blog/pic2.jpg" alt="">
+									<img src="/assets/images/blog/latest-blog/pic2.jpg" alt="">
 								</div>
 								<div class="info-bx">
 									<ul class="media-post">
@@ -1077,7 +796,7 @@
 						<div class="item">
 							<div class="recent-news">
 								<div class="action-box">
-									<img src="assets/images/blog/latest-blog/pic3.jpg" alt="">
+									<img src="/assets/images/blog/latest-blog/pic3.jpg" alt="">
 								</div>
 								<div class="info-bx">
 									<ul class="media-post">
@@ -1097,7 +816,153 @@
 				</div>
 			</div>
 			<!-- Recent News End -->
-			
+			--}}
+
+			<!-- Gallery Section -->
+			<div class="section-area section-sp2 bg-light">
+
+				<div class="container">
+
+					<!-- Section Title -->
+					<div class="section-head text-center">
+						<h2 class="title-head">School <span>Gallery</span></h2>
+						<h5>Celebrating Excellence, Achievement, and Community Impact</h5>
+						<p>
+							Explore memorable moments that showcase our commitment to quality education,
+							student development, institutional growth, and community engagement.
+						</p>
+					</div>
+
+					<!-- Statistics -->
+					<div class="row text-center m-b50">
+
+						<div class="col-md-3 col-6">
+							<div class="gallery-stat">
+								<h3>50+</h3>
+								<span>Years of Excellence</span>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-6">
+							<div class="gallery-stat">
+								<h3>5,000+</h3>
+								<span>Alumni Worldwide</span>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-6">
+							<div class="gallery-stat">
+								<h3>35+</h3>
+								<span>Projects Delivered</span>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-6">
+							<div class="gallery-stat">
+								<h3>1,200+</h3>
+								<span>Students Supported</span>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Featured Images -->
+					<div class="row">
+
+						@if ($galleryImages->count() > 0)
+							<div class="col-lg-6 mb-4">
+								<div class="gallery-item gallery-large">
+									<img src="{{ $galleryImages[0]->image_url }}" alt="{{ $galleryImages[0]->title }}">
+									<div class="gallery-overlay">
+										<h4>{{ $galleryImages[0]->title }}</h4>
+										<p>{{ $galleryImages[0]->category_label }}</p>
+									</div>
+								</div>
+							</div>
+						@endif
+
+						<div class="col-lg-6">
+							<div class="row">
+								@foreach ($galleryImages->slice(1, 4) as $image)
+									<div class="col-md-6 mb-4">
+										<div class="gallery-item">
+											<img src="{{ $image->image_url }}" alt="{{ $image->title }}">
+											<div class="gallery-overlay">
+												<h5>{{ $image->title }}</h5>
+											</div>
+										</div>
+									</div>
+								@endforeach
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Additional Gallery Grid -->
+					<div class="row mt-3">
+
+						@foreach ($galleryImages->slice(5, 3) as $image)
+							<div class="col-md-4 mb-4">
+								<div class="gallery-item">
+									<img src="{{ $image->image_url }}" alt="{{ $image->title }}">
+									<div class="gallery-overlay">
+										<h5>{{ $image->title }}</h5>
+									</div>
+								</div>
+							</div>
+						@endforeach
+
+					</div>
+
+					<!-- CTA -->
+					<div class="text-center mt-4">
+						<h4>Explore More Moments from Our School Community</h4>
+
+						<p class="m-b30">
+							Discover the achievements, events, and milestones that continue
+							to shape the future of our students and institution.
+						</p>
+
+						<a href="{{ route('gallery') }}" class="btn radius-xl">
+							View Full Gallery
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- Gallery Section END -->
+
+			<!-- Explore Our Website / Legacy Project -->
+			<div class="section-area section-sp2">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-6 heading-bx left">
+							<h2 class="title-head">Explore <span>Our Website</span></h2>
+							<ul class="list-check">
+								<li>Learn about our history</li>
+								<li>Connect with former classmates</li>
+								<li>Request certificates and testimonials</li>
+								<li>Support development projects</li>
+								<li>Stay updated with school activities</li>
+							</ul>
+						</div>
+
+						<div class="col-md-6 heading-bx left">
+							<h2 class="title-head">Legacy <span>Project Initiative</span></h2>
+							<p>
+								As part of our ongoing development, the LMLG community is committed
+								to building sustainable projects that will positively impact future
+								generations through infrastructure improvement and digital transformation.
+							</p>
+							<p><strong>Together, we are preserving memories and building tomorrow.</strong></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- Explore Our Website / Legacy Project END -->
         </div>
 		<!-- contact area END -->
     </div>

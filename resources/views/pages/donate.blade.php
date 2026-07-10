@@ -1,14 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner ovbl-dark" style="background-image:url('assets/images/banner/banner3.jpg');">
+<section class="page-banner ovbl-dark" style="background-image:url('/assets/images/banner/banner3.jpg');">
     <div class="container">
         <div class="page-banner-entry text-center text-white pt-5">
-            <h1>Support Our School</h1>
-            <p>
-                Help strengthen classrooms, resources, opportunities, and learning outcomes
-                for pupils in our community.
-            </p>
+            <h1>{{ $sections['banner']->heading }}</h1>
+            <p>{{ $sections['banner']->body }}</p>
         </div>
     </div>
 </section>
@@ -26,28 +23,21 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 heading-bx left">
-                <h2 class="title-head">Why Support <span>Our School?</span></h2>
-                <h5>Every gift helps a child learn in a better, safer, and more inspiring environment.</h5>
-                <p>
-                    Lagos Main Land Government Primary School welcomes support from old pupils,
-                    parents, organizations, community leaders, and well-wishers who believe
-                    that quality public primary education deserves continued investment.
-                </p>
-                <p>
-                    Your donation helps us improve classrooms, expand learning resources,
-                    strengthen pupil support, and create opportunities that prepare children
-                    for academic success, good character, and future leadership.
-                </p>
-                <a href="#donation-form" class="btn radius-xl">Make a Pledge</a>
+                <h2 class="title-head">{{ $sections['why-support']->heading }} <span>{{ $sections['why-support']->heading_accent }}</span></h2>
+                <h5>{{ $sections['why-support']->subheading }}</h5>
+                @foreach ($sections['why-support']->body_paragraphs as $paragraph)
+                    <p>{{ $paragraph }}</p>
+                @endforeach
+                <a href="{{ $sections['why-support']->cta_link }}" class="btn radius-xl">{{ $sections['why-support']->cta_label }}</a>
                 <a href="{{ route('contact') }}" class="btn radius-xl">Speak With Us</a>
             </div>
             <div class="col-lg-6 col-md-12">
-                <img src="assets/images/adv/adv.png" class="img-fluid rounded" alt="School support and development">
+                <img src="/assets/images/adv/adv.png" class="img-fluid rounded" alt="School support and development">
             </div>
         </div>
     </div>
 </section>
-
+{{--
 <section class="section-area section-sp2 bg-light">
     <div class="container">
         <div class="heading-bx text-center">
@@ -57,7 +47,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-bx">
-                    <div class="action-box"><img src="assets/images/our-services/pic11.jpg" alt="Classroom development"></div>
+                    <div class="action-box"><img src="/assets/images/our-services/pic11.jpg" alt="Classroom development"></div>
                     <div class="info-bx text-center">
                         <div class="feature-box-sm radius bg-white"><i class="fa fa-university text-primary"></i></div>
                         <h5>Classroom Development</h5>
@@ -67,7 +57,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-bx">
-                    <div class="action-box"><img src="assets/images/our-services/pic21.jpg" alt="Library improvement"></div>
+                    <div class="action-box"><img src="/assets/images/our-services/pic21.jpg" alt="Library improvement"></div>
                     <div class="info-bx text-center">
                         <div class="feature-box-sm radius bg-white"><i class="fa fa-book text-primary"></i></div>
                         <h5>Library Improvement</h5>
@@ -77,7 +67,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-bx">
-                    <div class="action-box"><img src="assets/images/courses/pic3.jpg" alt="Learning materials"></div>
+                    <div class="action-box"><img src="/assets/images/courses/pic3.jpg" alt="Learning materials"></div>
                     <div class="info-bx text-center">
                         <div class="feature-box-sm radius bg-white"><i class="fa fa-pencil text-primary"></i></div>
                         <h5>Learning Materials</h5>
@@ -87,7 +77,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-bx">
-                    <div class="action-box"><img src="assets/images/event/pic2.jpg" alt="Sports equipment"></div>
+                    <div class="action-box"><img src="/assets/images/event/pic2.jpg" alt="Sports equipment"></div>
                     <div class="info-bx text-center">
                         <div class="feature-box-sm radius bg-white"><i class="fa fa-futbol-o text-primary"></i></div>
                         <h5>Sports Equipment</h5>
@@ -97,7 +87,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-bx">
-                    <div class="action-box"><img src="assets/images/courses/pic4.jpg" alt="ICT development"></div>
+                    <div class="action-box"><img src="/assets/images/courses/pic4.jpg" alt="ICT development"></div>
                     <div class="info-bx text-center">
                         <div class="feature-box-sm radius bg-white"><i class="fa fa-laptop text-primary"></i></div>
                         <h5>ICT Development</h5>
@@ -107,7 +97,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-bx">
-                    <div class="action-box"><img src="assets/images/courses/pic5.jpg" alt="Scholarship support"></div>
+                    <div class="action-box"><img src="/assets/images/courses/pic5.jpg" alt="Scholarship support"></div>
                     <div class="info-bx text-center">
                         <div class="feature-box-sm radius bg-white"><i class="fa fa-heart text-primary"></i></div>
                         <h5>Scholarship Support</h5>
@@ -118,12 +108,12 @@
         </div>
     </div>
 </section>
-
-<section class="section-area section-sp2">
+--}}
+<section class="section-area section-sp2 bg-light">
     <div class="container">
         <div class="heading-bx text-center">
-            <h2 class="title-head">Ways Your Donation <span>Helps</span></h2>
-            <p>Donations are directed toward practical improvements that support teaching, learning, safety, and pupil confidence.</p>
+            <h2 class="title-head">{{ $sections['ways-helps']->heading }} <span>{{ $sections['ways-helps']->heading_accent }}</span></h2>
+            <p>{{ $sections['ways-helps']->body }}</p>
         </div>
         <div class="row">
             <div class="col-md-3 col-sm-6 mb-4">
@@ -158,17 +148,13 @@
     </div>
 </section>
 
-<section id="donation-form" class="section-area section-sp2 bg-light">
+<section id="donation-form" class="section-area section-sp2">
     <div class="container">
         <div class="row align-items-start">
             <div class="col-lg-5 col-md-12 heading-bx left">
-                <h2 class="title-head">Donation <span>Pledge Form</span></h2>
-                <h5>Frontend design only. No payment is processed on this form.</h5>
-                <p>
-                    Use this form design to indicate the area you would like to support.
-                    The school office can then follow up with official donation details,
-                    documentation, and acknowledgement.
-                </p>
+                <h2 class="title-head">{{ $sections['pledge-form']->heading }} <span>{{ $sections['pledge-form']->heading_accent }}</span></h2>
+                <h5>{{ $sections['pledge-form']->subheading }}</h5>
+                <p>{{ $sections['pledge-form']->body }}</p>
                 <ul class="list-check">
                     <li>For old pupils and alumni groups</li>
                     <li>For parents and well-wishers</li>
@@ -239,7 +225,7 @@
         </div>
     </div>
 </section>
-
+{{--
 <section class="section-area section-sp2">
     <div class="container">
         <div class="heading-bx text-center">
@@ -306,15 +292,12 @@
         </div>
     </div>
 </section>
-
-<section class="section-area section-sp1 ovpr-dark bg-fix" style="background-image:url(assets/images/background/bg1.jpg);">
+--}}
+<section class="section-area section-sp1 ovpr-dark bg-fix" style="background-image:url(/assets/images/background/bg1.jpg);">
     <div class="container text-center text-white">
-        <h2>Thank You for Investing in Our Pupils</h2>
-        <p>
-            Your generosity helps us build a stronger school, support hardworking teachers,
-            and give children the learning environment they deserve.
-        </p>
-        <a href="#donation-form" class="btn radius-xl">Make a Pledge</a>
+        <h2>{{ $sections['thank-you']->heading }}</h2>
+        <p>{{ $sections['thank-you']->body }}</p>
+        <a href="{{ $sections['thank-you']->cta_link }}" class="btn radius-xl">{{ $sections['thank-you']->cta_label }}</a>
         <a href="{{ route('contact') }}" class="btn radius-xl btn-light">Contact Us</a>
     </div>
 </section>

@@ -1,0 +1,90 @@
+/* Syncs the admin panel's chrome colors with the main site's brand palette
+   (primary #4c1864, secondary #3f189a, accent #f7b205). Loaded after
+   style.css so these rules take precedence without editing the vendor file. */
+
+.sb1,
+.sb2,
+.sb2-13,
+.sb2-13 ul li a,
+.inn-title {
+    background: #4c1864;
+}
+
+.sb2-1 {
+    background: #2d1240;
+}
+
+.sb2-13 ul li a {
+    border-bottom-color: #3a1350;
+}
+
+.sb2-13 ul li a:hover,
+.sb2-13 ul li a:focus {
+    background: #3f189a;
+}
+
+.sb2-12 {
+    background: #fff;
+}
+
+.sb2-12 ul li h5 {
+    color: #1c1c1c;
+}
+
+.sb2-12 ul li h5 span {
+    color: #666;
+}
+
+.menu-active {
+    background: #f7b205 !important;
+    color: #1c1c1c !important;
+}
+
+.dash-book a,
+.ad-st-view {
+    background: #4c1864;
+}
+
+.dash-book a:hover,
+.dash-book a:focus,
+.ad-st-view:hover {
+    background: #f7b205;
+    color: #1c1c1c !important;
+    border-color: #f7b205;
+}
+
+.btn-close-menu {
+    background: #3f189a;
+}
+
+.for-pass,
+.nav-tabs > li > a,
+.nav-tabs > li > a i {
+    color: #4c1864;
+}
+
+.btn-primary {
+    background-color: #4c1864;
+    border-color: #4c1864;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #3f189a !important;
+    border-color: #3f189a !important;
+}
+
+/* Website logo swapped in for the admin theme's own logo1.png; keep it from
+   stretching to the full sidebar-column width since the aspect ratio differs. */
+.sb1-1 {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo img {
+    width: auto;
+    max-height: 42px;
+}

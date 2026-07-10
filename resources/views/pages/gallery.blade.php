@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner ovbl-dark" style="background-image:url('assets/images/banner/banner1.jpg');">
+<section class="page-banner ovbl-dark" style="background-image:url('/assets/images/banner/banner1.jpg');">
     <div class="container">
         <div class="page-banner-entry text-center text-white pt-5">
             <h1>School Gallery</h1>
@@ -64,185 +64,22 @@
 
         <div class="clearfix">
             <ul id="masonry" class="ttr-gallery-listing magnific-image row" style="list-style:none; margin:0; padding:0;">
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 school-activities">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic1.jpg" alt="Morning assembly" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic1.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
+                @foreach ($images as $image)
+                    <li class="action-card col-lg-4 col-md-6 col-sm-12 {{ $image->category }}">
+                        <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
+                            <div class="portfolio-media media-ov2 media-effect">
+                                <img src="{{ $image->image_url }}" alt="{{ $image->title }}" style="width:100%; height:260px; object-fit:cover;">
+                                <div class="overlay-icon">
+                                    <a href="{{ $image->image_url }}" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="portfolio-info-bx">
+                                <h4><a href="#">{{ $image->title }}</a></h4>
+                                <p>{{ $image->category_label }}</p>
                             </div>
                         </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Morning Assembly</a></h4>
-                            <p>School Activities</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 classroom-learning">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic2.jpg" alt="Reading lesson" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic2.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Reading & Literacy</a></h4>
-                            <p>Classroom Learning</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 sports">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic3.jpg" alt="Pupils playing sports" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic3.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Inter-House Sports</a></h4>
-                            <p>Sports</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 cultural-events">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic4.jpg" alt="Cultural day celebration" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic4.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Cultural Day</a></h4>
-                            <p>Cultural Events</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 graduation">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic5.jpg" alt="Graduation ceremony" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic5.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Prize Giving</a></h4>
-                            <p>Graduation</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 excursions">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic6.jpg" alt="Educational excursion" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic6.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Educational Visit</a></h4>
-                            <p>Excursions</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 classroom-learning">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic7.jpg" alt="Numeracy class" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic7.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Numeracy Practice</a></h4>
-                            <p>Classroom Learning</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 school-activities">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic8.jpg" alt="School club activity" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic8.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Club Activities</a></h4>
-                            <p>School Activities</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 sports">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic9.jpg" alt="Team sports" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic9.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Team Spirit</a></h4>
-                            <p>Sports</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 cultural-events">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic11.jpg" alt="Cultural performance" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic11.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Cultural Performance</a></h4>
-                            <p>Cultural Events</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 graduation">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic21.jpg" alt="Graduating pupils" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic21.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Moving-Up Ceremony</a></h4>
-                            <p>Graduation</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="action-card col-lg-4 col-md-6 col-sm-12 excursions">
-                    <div class="portfolio-bx ttr-box" style="border-radius:6px; overflow:hidden;">
-                        <div class="portfolio-media media-ov2 media-effect">
-                            <img src="assets/images/gallery/pic31.jpg" alt="Learning outside classroom" style="width:100%; height:260px; object-fit:cover;">
-                            <div class="overlay-icon">
-                                <a href="assets/images/gallery/pic31.jpg" class="magnific-anchor"><i class="fa fa-search-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-info-bx">
-                            <h4><a href="#">Learning Beyond Class</a></h4>
-                            <p>Excursions</p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>

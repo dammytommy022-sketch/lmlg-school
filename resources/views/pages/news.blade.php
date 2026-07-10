@@ -1,16 +1,49 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner ovbl-dark" style="background-image:url('assets/images/banner/banner3.jpg');">
+<section class="page-banner ovbl-dark" style="background-image:url('/assets/images/banner/banner3.jpg');">
     <div class="container">
         <div class="page-banner-entry text-center text-white pt-5">
-            <h1>News & Events</h1>
-            <p>School updates, achievements, community activities, and important announcements.</p>
+            <h1>News &amp; Updates</h1>
+            <p>Stay informed about activities, events, and developments within the LMLG Primary School community.</p>
         </div>
     </div>
 </section>
 
+<div class="breadcrumb-row">
+    <div class="container">
+        <ul class="list-inline">
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li>News &amp; Updates</li>
+        </ul>
+    </div>
+</div>
+
 <section class="section-area section-sp2">
+    <div class="container">
+        <div class="heading-bx text-center">
+            <h2 class="title-head">What You'll <span>Find Here</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 heading-bx left">
+                <ul class="list-check">
+                    <li>School Announcements</li>
+                    <li>Alumni Events</li>
+                    <li>Homecoming Celebrations</li>
+                </ul>
+            </div>
+            <div class="col-md-6 heading-bx left">
+                <ul class="list-check">
+                    <li>Legacy Project Progress</li>
+                    <li>Community Outreach Programs</li>
+                    <li>Special Recognition &amp; Achievements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-area section-sp2 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-12 heading-bx left">
@@ -19,48 +52,46 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="recent-news">
-                    <div class="action-box"><img src="assets/images/blog/latest-blog/pic1.jpg" alt="Reading programme"></div>
-                    <div class="info-bx">
-                        <ul class="media-post">
-                            <li><a href="#"><i class="fa fa-calendar"></i>Jun 10 2026</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i>School Office</a></li>
-                        </ul>
-                        <h5 class="post-title"><a href="#">New Reading Programme Strengthens Literacy Skills</a></h5>
-                        <p>Pupils are building stronger vocabulary, comprehension, and reading confidence through guided class activities.</p>
-                        <div class="post-extra"><a href="#" class="btn-link">READ MORE</a></div>
+            @forelse ($latestPosts as $post)
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="recent-news">
+                        <div class="action-box"><img src="{{ $post->image_url }}" alt="{{ $post->title }}"></div>
+                        <div class="info-bx">
+                            <ul class="media-post">
+                                <li><a href="{{ route('news.show', $post->slug) }}"><i class="fa fa-calendar"></i>{{ optional($post->published_at)->format('M d Y') }}</a></li>
+                                <li><a href="{{ route('news.show', $post->slug) }}"><i class="fa fa-user"></i>{{ $post->author }}</a></li>
+                            </ul>
+                            <h5 class="post-title"><a href="{{ route('news.show', $post->slug) }}">{{ $post->title }}</a></h5>
+                            <p>{{ $post->excerpt }}</p>
+                            <div class="post-extra"><a href="{{ route('news.show', $post->slug) }}" class="btn-link">READ MORE</a></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="recent-news">
-                    <div class="action-box"><img src="assets/images/blog/latest-blog/pic2.jpg" alt="Pupil achievement"></div>
-                    <div class="info-bx">
-                        <ul class="media-post">
-                            <li><a href="#"><i class="fa fa-calendar"></i>May 28 2026</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i>Academic Team</a></li>
-                        </ul>
-                        <h5 class="post-title"><a href="#">Pupils Celebrate Excellence in Numeracy Week</a></h5>
-                        <p>Class competitions and practical problem-solving tasks encouraged teamwork, accuracy, and confidence.</p>
-                        <div class="post-extra"><a href="#" class="btn-link">READ MORE</a></div>
+            @empty
+                <div class="col-12"><p>No news posted yet.</p></div>
+            @endforelse
+        </div>
+    </div>
+</section>
+
+<section class="section-area section-sp2">
+    <div class="container">
+        <div class="heading-bx text-center">
+            <h2 class="title-head">Recent <span>Highlights</span></h2>
+        </div>
+        <div class="row">
+            @forelse ($highlights as $post)
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="recent-news">
+                        <div class="action-box"><img src="{{ $post->image_url }}" alt="{{ $post->title }}"></div>
+                        <div class="info-bx">
+                            <h5 class="post-title"><a href="{{ route('news.show', $post->slug) }}">{{ $post->title }}</a></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="recent-news">
-                    <div class="action-box"><img src="assets/images/blog/latest-blog/pic3.jpg" alt="Community support"></div>
-                    <div class="info-bx">
-                        <ul class="media-post">
-                            <li><a href="#"><i class="fa fa-calendar"></i>Apr 18 2026</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i>Community Desk</a></li>
-                        </ul>
-                        <h5 class="post-title"><a href="#">Parents and Alumni Support Classroom Improvements</a></h5>
-                        <p>Community partners continue to help create a safer, brighter, and more inspiring school environment.</p>
-                        <div class="post-extra"><a href="#" class="btn-link">READ MORE</a></div>
-                    </div>
-                </div>
-            </div>
+            @empty
+                <div class="col-12"><p>No highlights posted yet.</p></div>
+            @endforelse
         </div>
     </div>
 </section>
@@ -74,7 +105,7 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="event-bx">
-                    <div class="action-box"><img src="assets/images/event/pic1.jpg" alt="Open day"></div>
+                    <div class="action-box"><img src="/assets/images/event/pic1.jpg" alt="Open day"></div>
                     <div class="info-bx d-flex">
                         <div><div class="event-time"><div class="event-date">08</div><div class="event-month">July</div></div></div>
                         <div class="event-info">
@@ -90,7 +121,7 @@
             </div>
             <div class="col-md-4 mb-4">
                 <div class="event-bx">
-                    <div class="action-box"><img src="assets/images/event/pic2.jpg" alt="Cultural day"></div>
+                    <div class="action-box"><img src="/assets/images/event/pic2.jpg" alt="Cultural day"></div>
                     <div class="info-bx d-flex">
                         <div><div class="event-time"><div class="event-date">22</div><div class="event-month">July</div></div></div>
                         <div class="event-info">
@@ -106,7 +137,7 @@
             </div>
             <div class="col-md-4 mb-4">
                 <div class="event-bx">
-                    <div class="action-box"><img src="assets/images/event/pic3.jpg" alt="Prize giving"></div>
+                    <div class="action-box"><img src="/assets/images/event/pic3.jpg" alt="Prize giving"></div>
                     <div class="info-bx d-flex">
                         <div><div class="event-time"><div class="event-date">31</div><div class="event-month">July</div></div></div>
                         <div class="event-info">
@@ -119,6 +150,28 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-area section-sp1 ovpr-dark bg-fix text-center" style="background-image:url(/assets/images/background/bg1.jpg);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-white">
+                <h2 class="title-head">Stay <span>Connected</span></h2>
+                <p>
+                    Subscribe to receive updates directly in your email and remain part
+                    of the LMLG story wherever you are in the world.
+                </p>
+                <form class="row justify-content-center">
+                    <div class="col-md-7 mb-2">
+                        <input type="email" class="form-control" placeholder="Enter your email address">
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <button type="submit" class="btn radius-xl w-100">Subscribe</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

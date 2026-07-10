@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner ovbl-dark" style="background-image:url('assets/images/banner/banner2.jpg');">
+<section class="page-banner ovbl-dark" style="background-image:url('/assets/images/banner/banner2.jpg');">
     <div class="container">
         <div class="page-banner-entry text-center text-white pt-5">
-            <h1>Contact Us</h1>
-            <p>We are ready to support admissions, enquiries, partnerships, and parent communication.</p>
+            <h1>{{ $sections['banner']->heading }}</h1>
+            <p>{{ $sections['banner']->body }}</p>
         </div>
     </div>
 </section>
@@ -36,8 +36,8 @@
         <div class="row align-items-start mt-4">
             <div class="col-lg-7 col-md-12 mb-4">
                 <div class="heading-bx left">
-                    <h2 class="title-head">Send an <span>Enquiry</span></h2>
-                    <p>Complete the form and our school office will respond as soon as possible.</p>
+                    <h2 class="title-head">{{ $sections['enquiry']->heading }} <span>{{ $sections['enquiry']->heading_accent }}</span></h2>
+                    <p>{{ $sections['enquiry']->body }}</p>
                 </div>
                 <form class="contact-bx">
                     <div class="row">
@@ -71,7 +71,7 @@
             </div>
             <div class="col-lg-5 col-md-12">
                 <div class="heading-bx left">
-                    <h2 class="title-head">Office <span>Hours</span></h2>
+                    <h2 class="title-head">{{ $sections['office-hours']->heading }} <span>{{ $sections['office-hours']->heading_accent }}</span></h2>
                 </div>
                 <ul class="list-check">
                     <li>Monday to Friday: 8:00am - 4:00pm</li>
@@ -80,7 +80,7 @@
                     <li>Closed on weekends and public holidays</li>
                 </ul>
                 <div class="mt-4">
-                    <img src="assets/images/about/pic11.jpg" class="img-fluid rounded" alt="School contact">
+                    <img src="/assets/images/about/pic11.jpg" class="img-fluid rounded" alt="School contact">
                 </div>
             </div>
         </div>

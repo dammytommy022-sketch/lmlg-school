@@ -41,6 +41,8 @@ class PermissionSeeder extends Seeder
 
             'manage news',
             'manage gallery',
+            'manage sliders',
+            'manage pages',
 
             'view users',
             'create users',
@@ -50,9 +52,7 @@ class PermissionSeeder extends Seeder
         ];
 
         foreach ($permissions as $permission) {
-            Permission::create([
-                'name' => $permission
-            ]);
+            Permission::firstOrCreate(['name' => $permission]);
         }
     }
 }
